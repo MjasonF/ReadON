@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.example.readon">
+
+    <uses-permission android:name="android.permission.WAKE_LOCK" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+
+    <application
+        android:name=".ReadONApplication"
+        android:allowBackup="true"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:roundIcon="@mipmap/ic_launcher_round"
+        android:supportsRtl="true"
+        android:theme="@style/Theme.ReadOn">
+        <activity android:name=".QuestionsResultActivity"></activity>
+        <activity android:name=".QuestionsActivity" />
+        <activity android:name=".TextDetails" />
+        <activity android:name=".TextActivity" />
+        <activity android:name=".BooksActivity" />
+        <activity android:name=".StoriesActivity" />
+        <activity
+            android:name=".AddDuelTextActivity"
+            android:exported="true" />
+        <activity
+            android:name=".DuelAnswerActivity"
+            android:exported="true" />
+        <activity
+            android:name=".DuelStartActivity"
+            android:exported="true" />
+        <activity android:name=".FriendRequestActivity" />
+        <activity android:name=".NewPasswordActivity" />
+        <activity android:name=".InputCodeActivity" />
+        <activity android:name=".ForgotPasswordActivity" />
+        <activity android:name=".TipsActivity" />
+        <activity android:name=".EditprofileActivity" />
+        <activity android:name=".FriendlistActivity" />
+        <activity android:name=".LibraryActivity" />
+        <activity android:name=".ShelfActivity" />
+        <activity android:name=".ProfileActivity" />
+        <activity android:name=".DuelRequestActivity" />
+        <activity android:name=".ReadBookActivity" />
+        <activity android:name=".ChallengeActivity" />
+        <activity android:name=".MailActivity" />
+        <activity android:name=".DuelHistoryActivity" />
+        <activity android:name=".ShopActivity" />
+        <activity android:name=".DetailProductActivity" />
+        <activity android:name=".DetailTipsActivity" />
+        <activity android:name=".DuelActivity" />
+        <activity android:name=".FrontActivity" />
+        <activity android:name=".HomeActivity">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity android:name=".LoginActivity" />
+        <activity android:name=".SignUpActivity" />
+
+        <service
+            android:name=".backgroundservice.StatusService"
+            android:enabled="true"
+            android:permission="android.permission.BIND_JOB_SERVICE" />
+    </application>
+
+</manifest>

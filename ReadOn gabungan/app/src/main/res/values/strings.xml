@@ -1,0 +1,20 @@
+<resources>
+    <string name="app_name">ReadOn</string>
+    <string name="text_sign_up">Sign Up</string>
+    <string name="text_username">Username</string>
+    <string name="text_email">Email</string>
+    <string name="text_password">Password</string>
+    <string name="text_login">Login</string>
+    <string name="text_forgot">Forgot Password?</string>
+    <string name="text_logout">Logout</string>
+    <string name="duel_request">Duel Request From : %s</string>
+    <string name="duel_type">Duel Type : %s</string>
+    <string name="time_limit">Time Limit : %s Hours</string>
+    <string name="your_point">Your Point : %s</string>
+    <string name="opponent_point">Opponent Point : %s</string>
+    <string name="winner">Winner : %s</string>
+    <string name="challenge_name">Challenge Name</string>
+    <string name="challenge_desc">Challenge Desc</string>
+    <string name="progress_bar">Progress Bar</string>
+    <string name="placeholder_text">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Lorem ipsum dolor sit amet consectetur. Morbi non arcu risus quis varius. In mollis nunc sed id semper risus. Egestas integer eget aliquet nibh. Nunc sed blandit libero volutpat sed. Aliquam ultrices sagittis orci a. Eu ultrices vitae auctor eu augue ut lectus arcu bibendum. Sed arcu non odio euismod. Orci ac auctor augue mauris augue neque. Rhoncus urna neque viverra justo nec ultrices.</string>
+</resources>

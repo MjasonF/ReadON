@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "939183794598",
+    "project_id": "readon-b038e",
+    "storage_bucket": "readon-b038e.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:939183794598:android:ee8d05dc47d6d81c0ec767",
+        "android_client_info": {
+          "package_name": "com.example.readon"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "939183794598-f7o7fpjpmu7rq98ecavca7tc603jm7dm.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDwsfuGxa073VUvFBPrT-Z6_bk6YLbuz78"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "939183794598-f7o7fpjpmu7rq98ecavca7tc603jm7dm.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
