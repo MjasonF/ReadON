@@ -9,9 +9,16 @@ import android.widget.TextView;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import com.example.readon.pref.AppPreference;
+import com.google.android.material.floatingactionbutton.FloatingActionButton;
+
 public class TextDetails extends AppCompatActivity {
     TextView textContent;
     private Button moveQuestions;
+    FloatingActionButton fabBtn;
+    Integer currentFontSize;
+    Integer currentIndex;
+    AppPreference pref;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -22,6 +29,38 @@ public class TextDetails extends AppCompatActivity {
         Intent i = getIntent();
         String title = i.getStringExtra("titleOfText");
         String content = i.getStringExtra("contentOfText");
+
+        pref = new AppPreference(this);
+
+        currentIndex = pref.getFontSize();
+
+        if(currentIndex == 0){
+            currentFontSize = 17;
+        }else if(currentIndex == 1){
+            currentFontSize = 19;
+        }else if(currentIndex == 2){
+            currentFontSize = 21;
+        }
+
+        textContent.setTextSize(currentFontSize);
+
+        fabBtn = findViewById(R.id.btn_fab_text);
+        fabBtn.setOnClickListener(v -> {
+            if(currentIndex <2){
+                currentIndex += 1;
+            }else if(currentIndex == 2){
+                currentIndex = 0;
+            }
+            pref.saveFontSize(currentIndex);
+            if(currentIndex == 0){
+                currentFontSize = 17;
+            }else if(currentIndex == 1){
+                currentFontSize = 19;
+            }else if(currentIndex == 2){
+                currentFontSize = 21;
+            }
+            textContent.setTextSize(currentFontSize);
+        });
 
         getSupportActionBar().setTitle(title);
 

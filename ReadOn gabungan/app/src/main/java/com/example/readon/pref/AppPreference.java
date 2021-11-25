@@ -24,6 +24,11 @@ public class AppPreference {
         editor.apply();
     }
 
+    public void saveFontSize(Integer fontIndex){
+        editor.putInt("fontSize", fontIndex);
+        editor.apply();
+    }
+
     public String getUserLoggedInUsername() {
         return pref.getString("username", "");
     }
@@ -37,6 +42,10 @@ public class AppPreference {
     }
 
     public Boolean isAdmin() { return pref.getBoolean("isAdmin", false); }
+
+    public Integer getFontSize(){
+        return pref.getInt("fontSize", 0);
+    }
 
     public void logout() {
         editor.clear();

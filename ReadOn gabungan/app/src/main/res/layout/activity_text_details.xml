@@ -26,16 +26,26 @@
         android:fadeScrollbars="true"
         />
 
-        <Button
-            android:id="@+id/button4"
-            app:layout_constraintVertical_weight="1"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Go To Questions"
-            app:layout_constraintBottom_toBottomOf="parent"
-            android:onClick="navigate"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            tools:ignore="MissingConstraints" />
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/btn_fab_text"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        android:layout_marginBottom="20dp"
+        android:layout_marginRight="20dp"
+        app:srcCompat="@drawable/ic_font_size"
+        app:tint="@color/white"/>
+
+    <Button
+        android:id="@+id/button4"
+        app:layout_constraintVertical_weight="1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Go To Questions"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        tools:ignore="MissingConstraints" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

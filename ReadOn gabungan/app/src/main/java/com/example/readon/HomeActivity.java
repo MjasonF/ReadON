@@ -3,6 +3,7 @@ package com.example.readon;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.app.AppCompatDelegate;
 import androidx.constraintlayout.widget.Group;
 
 import android.content.Intent;
@@ -23,6 +24,7 @@ import com.example.readon.datamodel.duel.SendDuelRequest;
 import com.example.readon.pref.AppPreference;
 import com.example.readon.service.APIClient;
 import com.facebook.shimmer.ShimmerFrameLayout;
+import com.google.android.material.floatingactionbutton.FloatingActionButton;
 
 import org.json.JSONObject;
 
@@ -43,7 +45,7 @@ public class HomeActivity extends AppCompatActivity {
     private ShimmerFrameLayout shimmerFrameLayout;
 
     private Button btnAddDuelText;
-    private Button btnShop;
+    private FloatingActionButton btnShop;
     private Button btnEditProfile;
     private Button btnTipsAndTrick;
 
@@ -53,6 +55,7 @@ public class HomeActivity extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+        AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_NO);
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_home);
 
