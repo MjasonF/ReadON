@@ -39,6 +39,7 @@ public class HomeActivity extends AppCompatActivity {
     private TextView username;
     private TextView tvActiveDuel, tvDuel, tvScore, tvStatus;
     private Button btnStartDuel;
+    private Button btnAgenda;
     ViewFlipper flipperView;
 
     private Group activeDuelGroup;
@@ -46,7 +47,6 @@ public class HomeActivity extends AppCompatActivity {
 
     private Button btnAddDuelText;
     private FloatingActionButton btnShop;
-    private Button btnEditProfile;
     private Button btnTipsAndTrick;
 
     private String duelId;
@@ -76,6 +76,7 @@ public class HomeActivity extends AppCompatActivity {
         btnAddDuelText = findViewById(R.id.btn_add_text);
         btnTipsAndTrick = findViewById(R.id.tips);
         btnShop = findViewById(R.id.btn_shop);
+        btnAgenda = findViewById(R.id.agenda);
 
         btnAddDuelText.setOnClickListener(v -> {
             Intent intent = new Intent(this, AddDuelTextActivity.class);
@@ -98,6 +99,11 @@ public class HomeActivity extends AppCompatActivity {
             startActivity(intent);
         });
 
+        btnAgenda.setOnClickListener(v -> {
+            Intent intent = new Intent(this, AgendaActivity.class);
+            startActivity(intent);
+        });
+
         appPreference = new AppPreference(this);
 
         if (!appPreference.isAdmin()) {
@@ -116,7 +122,7 @@ public class HomeActivity extends AppCompatActivity {
         });
 
         int images[] = {R.drawable.skateboard, R.drawable.design, R.drawable.cellphone};
-//
+
         flipperView = findViewById(R.id.flipperView);
         flipperView.setOnClickListener(new View.OnClickListener() {
             @Override

@@ -33,7 +33,6 @@ import retrofit2.Callback;
 import retrofit2.Response;
 
 public class FriendlistActivity extends AppCompatActivity {
-    private Button friend, rival;
     private ImageView friendrequest;
     private FloatingActionButton searchbtn;
     private RecyclerView listfriend;
@@ -45,8 +44,6 @@ public class FriendlistActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_friendlist);
-        friend = findViewById(R.id.btn_friend);
-        rival = findViewById(R.id.btn_rival);
         friendrequest = findViewById(R.id.friendrequest);
         friendrequest.setOnClickListener(v -> {
             Intent friendIntent = new Intent(this, FriendRequestActivity.class);

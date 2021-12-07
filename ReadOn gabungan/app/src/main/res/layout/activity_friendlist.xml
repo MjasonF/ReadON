@@ -28,27 +28,6 @@
         app:layout_constraintBottom_toBottomOf="@id/title"
         app:layout_constraintRight_toRightOf="parent" />
 
-    <Button
-        android:id="@+id/btn_friend"
-        android:layout_width="100dp"
-        android:layout_height="wrap_content"
-        app:layout_constraintTop_toBottomOf="@id/title"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toLeftOf="@id/btn_rival"
-        android:text="friends"
-        android:layout_marginRight="10dp"
-        android:layout_marginTop="20dp"/>
-
-    <Button
-        android:id="@+id/btn_rival"
-        android:layout_width="100dp"
-        android:layout_height="wrap_content"
-        app:layout_constraintTop_toBottomOf="@id/title"
-        app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintLeft_toRightOf="@id/btn_friend"
-        android:text="rivals"
-        android:layout_marginLeft="10dp"
-        android:layout_marginTop="20dp"/>
 
     <com.google.android.material.floatingactionbutton.FloatingActionButton
         android:id="@+id/searchbtn"
@@ -65,7 +44,7 @@
         tools:listitem="@layout/list_friend"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        app:layout_constraintTop_toBottomOf="@id/btn_friend"
+        app:layout_constraintTop_toBottomOf="@id/title"
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintLeft_toLeftOf="parent"
         android:layout_marginTop="15dp"
