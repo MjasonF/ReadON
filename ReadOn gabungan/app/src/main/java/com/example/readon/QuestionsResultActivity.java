@@ -7,6 +7,8 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.TextView;
 
+import com.example.readon.service.MissionCompleteService;
+
 public class QuestionsResultActivity extends AppCompatActivity {
 
     TextView text;
@@ -23,6 +25,8 @@ public class QuestionsResultActivity extends AppCompatActivity {
 
         text = findViewById(R.id.textView5);
         text.setText("You managed to answer\n" + hasil + " out of 4 questions");
+
+        new MissionCompleteService(this).completeMission(3);
     }
 
     public void goToText(View view) {

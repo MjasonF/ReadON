@@ -8,7 +8,9 @@ import com.example.readon.datamodel.SearchUserResponse;
 import com.example.readon.datamodel.duel.DuelTextRequest;
 import com.example.readon.datamodel.duel.DuelTextResponse;
 import com.example.readon.datamodel.duel.SendDuelRequest;
+import com.example.readon.datamodel.mission.MissionRequest;
 import com.example.readon.model.Friendlist;
+import com.example.readon.model.QuestItem;
 import com.example.readon.model.Questions;
 import com.example.readon.model.Reads;
 import com.example.readon.model.User;
@@ -99,6 +101,12 @@ public interface APIService {
 
     @GET("/getquestions")
     Call<List<Questions>> getquestions();
+
+    @POST("/mission-complete")
+    Call<APIResponse> completeMission(@Body MissionRequest request);
+
+    @POST("/get-mission")
+    Call<APIResponse<List<QuestItem>>> getMissions(@Body MissionRequest request);
 
     APIService create(Class<APIService> apiServiceClass);
 }

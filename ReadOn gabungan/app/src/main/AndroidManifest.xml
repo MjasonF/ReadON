@@ -16,8 +16,14 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.ReadOn">
+        <activity android:name=".DailyQuestActivity"></activity>
+        <activity
+            android:name=".TextToSpeechActivity"
+            android:exported="false" />
+
         <receiver android:name=".AlarmReceiver" />
-        <activity android:name=".CreateNotesActivity"></activity>
+
+        <activity android:name=".CreateNotesActivity" />
         <activity android:name=".AgendaActivity" />
         <activity android:name=".QuestionsResultActivity" />
         <activity android:name=".QuestionsActivity" />

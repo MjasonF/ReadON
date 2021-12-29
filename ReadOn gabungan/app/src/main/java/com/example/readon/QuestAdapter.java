@@ -10,45 +10,38 @@ import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.example.readon.model.QuestModel;
 import com.example.readon.model.Reads;
 
 import java.util.ArrayList;
 import java.util.List;
 
-public class TextAdapter extends RecyclerView.Adapter<TextAdapter.ViewHolder> {
+
+public class QuestAdapter extends RecyclerView.Adapter<QuestAdapter.ViewHolder> {
 
     private LayoutInflater inflater;
-    List<Reads> reads = new ArrayList<Reads>();
+    List<QuestModel> quests = new ArrayList<QuestModel>();
 
-    TextAdapter(Context context, ArrayList<String> titles, ArrayList<String> contents){
+    QuestAdapter(Context context){
         this.inflater = LayoutInflater.from(context);
     }
 
-    public void addTitle(List<Reads> reads) {
-        this.reads = reads;
+    public void addItem(List<QuestModel> quests) {
+        this.quests = quests;
         notifyDataSetChanged();
     }
 
     @NonNull
     @Override
     public ViewHolder onCreateViewHolder(@NonNull ViewGroup ViewGroup, int i) {
-        View view = inflater.inflate(R.layout.custom_view, ViewGroup, false);
+        View view = inflater.inflate(R.layout.custom_view_quest, ViewGroup, false);
         return new ViewHolder(view);
     }
 
     @Override
     public void onBindViewHolder(@NonNull ViewHolder viewHolder, int i) {
-        String title = reads.get(i).getTitle();
-        Reads read = reads.get(i);
-        String content ="";
-
-        content += "Title : " + read.getTitle() + "\n";
-        content += "Author : " + read.getAuthor() + "\n";
-        content += "Summary : " + read.getSummary() + "\n";
-        content += "Year : " + read.getYear() + "\n";
-        content += "Pages : " + read.getPages() + "\n";
-        content += "Words : " + read.getWords() + "\n";
-        content += "Difficulties : " + read.getDifficulties() + "\n\n";
+        String title = quests.get(i).name;
+        String content = quests.get(i).status;
 
 
         viewHolder.textTitle.setText(title);
@@ -57,7 +50,7 @@ public class TextAdapter extends RecyclerView.Adapter<TextAdapter.ViewHolder> {
 
     @Override
     public int getItemCount() {
-        return reads.size();
+        return quests.size();
     }
 
     public class ViewHolder extends RecyclerView.ViewHolder{
@@ -69,12 +62,12 @@ public class TextAdapter extends RecyclerView.Adapter<TextAdapter.ViewHolder> {
             itemView.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
-                    Intent i = new Intent(v.getContext(), TextDetails.class);
-                    i.putExtra("titleOfText", reads.get(getAdapterPosition()).getTitle());
-                    i.putExtra("contentOfText", reads.get(getAdapterPosition()).getFull_story());
-                    i.putExtra("id", reads.get(getAdapterPosition()).getId());
-
-                    v.getContext().startActivity(i);
+//                    Intent i = new Intent(v.getContext(), TextDetails.class);
+//                    i.putExtra("titleOfText", reads.get(getAdapterPosition()).getTitle());
+//                    i.putExtra("contentOfText", reads.get(getAdapterPosition()).getFull_story());
+//                    i.putExtra("id", reads.get(getAdapterPosition()).getId());
+//
+//                    v.getContext().startActivity(i);
                 }
             });
             textTitle = itemView.findViewById(R.id.textTitle);
