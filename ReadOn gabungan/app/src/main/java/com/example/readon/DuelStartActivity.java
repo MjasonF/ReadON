@@ -17,6 +17,7 @@ import com.example.readon.datamodel.duel.DuelTextItemResponse;
 import com.example.readon.datamodel.duel.DuelTextResponse;
 import com.example.readon.datamodel.duel.SendDuelRequest;
 import com.example.readon.service.APIClient;
+import com.example.readon.service.MissionCompleteService;
 
 import org.json.JSONObject;
 
@@ -60,6 +61,7 @@ public class DuelStartActivity extends AppCompatActivity {
             startActivity(intent);
         });
 
+        new MissionCompleteService(this).completeMission(2);
         loadDuelQuestion(duelId);
     }
 

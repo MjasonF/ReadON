@@ -7,16 +7,10 @@ import androidx.recyclerview.widget.RecyclerView;
 import android.os.Bundle;
 
 import com.example.readon.model.Reads;
-import com.example.readon.service.APIClient;
-import com.example.readon.service.APIService;
 import com.example.readon.service.ReadHelper;
 
 import java.util.ArrayList;
 import java.util.List;
-
-import retrofit2.Call;
-import retrofit2.Callback;
-import retrofit2.Response;
 
 public class TextActivity extends AppCompatActivity {
 

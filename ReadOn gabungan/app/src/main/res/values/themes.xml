@@ -12,6 +12,7 @@
         <!-- Status bar color. -->
         <item name="android:statusBarColor" tools:targetApi="l">?attr/colorPrimaryVariant</item>
         <!-- Customize your theme here. -->
+        <item name="background_color"> #FF03DAC5 </item>
     </style>
     <style name="AppTheme" parent="Theme.AppCompat.Light.NoActionBar"> @style/OtpWidget.OtpView </style>
 </resources>

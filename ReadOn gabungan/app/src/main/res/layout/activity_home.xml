@@ -4,7 +4,6 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/tosca"
     tools:context=".HomeActivity">
 
     <ScrollView
@@ -32,7 +31,6 @@
                 android:hint="Username"
                 android:layout_marginLeft="10dp"
                 android:textSize="30sp"
-                android:textColor="@color/black"
                 app:layout_constraintTop_toTopOf="@id/profilepic"
                 app:layout_constraintBottom_toBottomOf="@id/profilepic"
                 app:layout_constraintLeft_toRightOf="@id/profilepic"/>
@@ -243,4 +241,14 @@
         app:srcCompat="@drawable/ic_cart"
         android:backgroundTint="@color/white"
         />
+
+    <androidx.appcompat.widget.SwitchCompat
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/bt_switch"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        android:layout_gravity="bottom|end"
+        android:layout_marginBottom="70dp"
+        android:layout_marginRight="15dp"/>
 </androidx.coordinatorlayout.widget.CoordinatorLayout>

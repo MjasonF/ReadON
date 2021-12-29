@@ -4,6 +4,7 @@ import androidx.annotation.NonNull;
 import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.app.AppCompatDelegate;
+import androidx.appcompat.widget.SwitchCompat;
 import androidx.constraintlayout.widget.Group;
 
 import android.content.Intent;
@@ -12,6 +13,7 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
+import android.widget.CompoundButton;
 import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -23,6 +25,7 @@ import com.example.readon.datamodel.duel.DuelResponse;
 import com.example.readon.datamodel.duel.SendDuelRequest;
 import com.example.readon.pref.AppPreference;
 import com.example.readon.service.APIClient;
+import com.example.readon.service.MissionCompleteService;
 import com.facebook.shimmer.ShimmerFrameLayout;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 
@@ -51,13 +54,33 @@ public class HomeActivity extends AppCompatActivity {
 
     private String duelId;
 
+    SwitchCompat switchCompat;
+
     public static final String HOME_MESSAGE = "home_message";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
-        AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_NO);
+        if (AppCompatDelegate.getDefaultNightMode() == AppCompatDelegate.MODE_NIGHT_YES){
+            setTheme(R.style.Theme_Dark);
+        }else{
+            setTheme(R.style.Theme_ReadOn);
+        }
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_home);
+
+        switchCompat = findViewById(R.id.bt_switch);
+
+        switchCompat.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
+            @Override
+            public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
+                if(isChecked){
+                    AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_YES);
+                }else{
+                    AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_NO);
+                }
+            }
+        });
+
 
         String message = getIntent().getStringExtra(HOME_MESSAGE);
 
@@ -159,6 +182,7 @@ public class HomeActivity extends AppCompatActivity {
             }
         });
 
+        new MissionCompleteService(this).completeMission(1);
     }
 
     @Override
@@ -204,6 +228,9 @@ public class HomeActivity extends AppCompatActivity {
                 return true;
             case R.id.tips:
                 movetips();
+                return true;
+            case R.id.dailyQuest:
+                moveDailyQuest();
                 return true;
             case R.id.logout:
                 appPreference.logout();
@@ -317,6 +344,11 @@ public class HomeActivity extends AppCompatActivity {
 
     public void moveduel() {
         Intent i = new Intent(this, DuelActivity.class);
+        startActivity(i);
+    }
+
+    public void moveDailyQuest() {
+        Intent i = new Intent(this, DailyQuestActivity.class);
         startActivity(i);
     }
 

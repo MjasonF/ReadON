@@ -7,6 +7,7 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
 
+
 import androidx.appcompat.app.AppCompatActivity;
 
 import com.example.readon.pref.AppPreference;
@@ -15,7 +16,7 @@ import com.google.android.material.floatingactionbutton.FloatingActionButton;
 public class TextDetails extends AppCompatActivity {
     TextView textContent;
     private Button moveQuestions;
-    FloatingActionButton fabBtn;
+    FloatingActionButton fabBtn, moveTTS;
     Integer currentFontSize;
     Integer currentIndex;
     AppPreference pref;
@@ -83,6 +84,19 @@ public class TextDetails extends AppCompatActivity {
             }
         });
 
+        moveTTS = findViewById(R.id.btn_fab_tts);
+        moveTTS.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                movetts();
+            }
+        });
+
 
     }
+    public void movetts() {
+        Intent i = new Intent(this, TextToSpeechActivity.class);
+        startActivity(i);
+    }
+
 }
